@@ -1,0 +1,221 @@
+@charset 'UTF-8';
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@100;200;300;400;500;600;700&family=Roboto:wght@100;300;400;500;700&display=swap');
+@font-face { 
+    font-family: 'S-CoreDream-3Light'; 
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') 
+    format('woff'); 
+    font-weight: normal; 
+    font-style: normal; 
+}
+
+@import 'reset';
+
+.scroll {
+    width: 150px;
+    position: fixed;
+    top: 3%;
+    right: 3%;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 30px;
+
+    dl {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+#visual {
+    background: pink;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    div {
+        h1 {
+            margin-bottom: 50px;
+
+            span {
+                display: inline-block;
+                font: 350px/1 'Josefin Slab';
+            }
+        }
+
+        p {
+            text-align: center;
+            font: 300 30px/1 'Roboto';
+        }
+    }
+}
+
+#intro {
+    position: relative;
+    padding: 150px 5vw;
+
+    article {
+        width: 55%;
+        margin-bottom: 90px;
+        position: relative;
+
+        h2 {
+            margin-bottom: 40px;
+            font: 100px/1 'Josefin Slab';
+        }
+
+        span {
+            position: absolute; 
+            bottom: -100px; left: 0;
+            font: 200 150px/1 'Josefin Slab';
+            color: pink;
+            z-index: -1;
+        }
+
+        p {
+            font: 28px/1.4 'S-CoreDream-3Light';
+        }
+
+        &:last-of-type {
+            margin-left: 250px;
+
+            span {
+                left: 20%;
+            }
+        }
+    }
+
+    .pic {
+        position: absolute;
+        top: 100px;
+        right: 200px;
+        width: 400px;
+        height: 400px;
+        background: #000;
+        border-radius: 50%;
+
+        &::before {
+            content: '';
+            position: absolute; 
+            top: calc( 100% + 400px);
+            left: 50%;
+            width: 26px;
+            height: 26px;
+            background: #000;
+            margin-left: -13px;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            width: 1px;
+            height: 400px;
+            background: #000;
+        }
+    }
+}
+
+#work {
+    .tit {
+        position: relative;
+        padding: 14vw 0;
+        background: #333;
+
+        h2 {
+            position: relative;
+            text-align: center;
+            font: 160px/1 'Josefin Slab';
+            color: #fff;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                width: 1px;
+                height: 100px;
+                background: #fff;
+            }
+        }
+
+        p {
+            width: 50%;
+            margin: 140px auto 0;
+            text-align: center;
+            font: 28px/1.3 'S-CoreDream-3Light';
+            color: #fff; 
+        }
+
+        .floatLeftImg {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 35%;
+        }
+
+        .floatRightImg {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+        }
+    }
+
+    .project {
+        padding: 10vw 0;
+
+        article {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 5vw;
+            margin-bottom: 10vw;
+
+            &:nth-of-type(2){
+                flex-direction: row-reverse;
+            }
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+
+            .pic {
+                width: 50%;
+            }
+            
+            .des {
+                position: relative;
+                width: 40%;
+
+                h3 {
+                    margin: 20px 0 50px;
+                    font: 90px/1 'Josefin Slab';
+                }
+
+                p {
+                    font: 20px/1.4 'S-CoreDream-3Light';
+                }
+
+                button {
+                    width: 100%;
+                    position: absolute;
+                    bottom: 24%;
+                    left: 0;
+                    height: 40px;
+                    font: 20px/40px 'Josefin Slab';
+                    cursor: pointer;
+                    letter-spacing: 2px;
+                    background-color: #eee;
+                    border: 1px solid #333;
+                    transition: all 0.7s;
+
+                    &:hover {
+                        background-color: pink;
+                    }
+                }
+            }
+
+        }
+    }
+}
