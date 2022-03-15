@@ -32,6 +32,7 @@ img {
   right: 3%;
   background: rgba(0, 0, 0, 0.3);
   padding: 30px;
+  z-index: 100;
 }
 .scroll dl {
   display: flex;
@@ -39,7 +40,7 @@ img {
 }
 
 #visual {
-  background: pink;
+  background: #f9e1d5;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -70,6 +71,8 @@ img {
 #intro article h2 {
   margin-bottom: 40px;
   font: 100px/1 "Josefin Slab";
+  transform: translateY(150px);
+  opacity: 0;
 }
 #intro article span {
   position: absolute;
@@ -81,6 +84,8 @@ img {
 }
 #intro article p {
   font: 28px/1.4 "S-CoreDream-3Light";
+  transform: translateY(150px);
+  opacity: 0;
 }
 #intro article:last-of-type {
   margin-left: 250px;
@@ -200,6 +205,51 @@ img {
 }
 #work .project article .des button:hover {
   background-color: pink;
+}
+
+#skill {
+  padding: 200px 0;
+  background: #f9e1d5;
+}
+#skill h2 {
+  text-align: center;
+  font: 160px/1 "Josefin Slab";
+}
+#skill .charts {
+  padding: 5vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+#skill .charts .chart {
+  position: relative;
+  padding: 2vw;
+  width: 33.333%;
+  text-align: center;
+  border-right: 1px solid #fff;
+}
+#skill .charts .chart svg {
+  width: 240px;
+  height: 240px;
+}
+#skill .charts .chart svg circle {
+  margin: 0 auto;
+  fill: #fff;
+}
+#skill .charts .chart h3 {
+  margin-top: 30px;
+  font: 35px/1 "Roboto";
+}
+#skill .charts .chart p {
+  width: 80%;
+  margin: 20px auto 0;
+  font: 22px/1.4 "S-CoreDream-3Light";
+}
+#skill .charts .chart span {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  font: 40px/1 "Roboto";
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -18,6 +18,7 @@
     right: 3%;
     background: rgba(0, 0, 0, 0.3);
     padding: 30px;
+    z-index: 100;
 
     dl {
         display: flex;
@@ -62,6 +63,8 @@
         h2 {
             margin-bottom: 40px;
             font: 100px/1 'Josefin Slab';
+            transform: translateY(150px);
+            opacity: 0;
         }
 
         span {
@@ -74,6 +77,8 @@
 
         p {
             font: 28px/1.4 'S-CoreDream-3Light';
+            transform: translateY(150px);
+            opacity: 0;
         }
 
         &:last-of-type {
@@ -221,5 +226,54 @@
 }
 
 #skill {
+    padding: 200px 0;
     background: #f9e1d5;
+
+    h2 {
+        text-align: center;
+        font: 160px/1 'Josefin Slab';
+    }
+
+    .charts {
+        padding: 5vw;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .chart {
+            position: relative;
+            padding: 2vw;
+            width: 33.333%;
+            text-align: center;
+            border-right: 1px solid #fff;
+
+            svg {
+                width: 240px;
+                height: 240px;
+
+                circle {
+                    margin: 0 auto;
+                    fill: #fff;
+                }
+            }
+
+            h3 {
+                margin-top: 30px;
+                font: 35px/1 'Roboto';
+            }
+
+            p {
+                width: 80%;
+                margin: 20px auto 0;
+                font: 22px/1.4 'S-CoreDream-3Light';
+            }
+
+            span {
+                position: absolute;
+                top: 20%;
+                left: 50%;
+                font: 40px/1 'Roboto';
+            }
+        }
+    }
 }
