@@ -1,4 +1,5 @@
-const title = document.querySelector('#visual h1');
+window.addEventListener('load', e=>{
+    const title = document.querySelector('#visual h1');
 const titleText = title.innerText;
 const section = document.querySelectorAll('section');
 let sectionOffset = [];
@@ -149,4 +150,6 @@ window.addEventListener('scroll', e=>{
 
 const skill = document.querySelector('#skill');
 console.log(skill.getBoundingClientRect());
+})
+
 
