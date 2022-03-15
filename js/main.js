@@ -69,3 +69,20 @@ window.addEventListener('scroll', e=>{
         }
     }
 })
+
+const charts = document.querySelectorAll('.chart');
+charts.forEach((chart, idx)=>{
+    const dataNum = chart.querySelector('span');
+    let init = 0;
+    const dataNumVal = dataNum.getAttribute('data-num');
+    const time = 1000 / dataNumVal;
+
+    const numIncrease = setInterval(()=>{
+        ++init
+        dataNum.innerText = `${init}%`;
+
+        if(init >= dataNumVal){
+            clearInterval(numIncrease);
+        }
+    },time)
+})
