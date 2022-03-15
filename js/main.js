@@ -35,6 +35,7 @@ tl.from('#visual p', {
 section.forEach((el, idx)=>{
     sectionOffset.push(el.offsetTop);
 })
+console.log(sectionOffset);
 
 //window.scroll 값 넣기
 window.addEventListener('scroll', e=>{
