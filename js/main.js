@@ -1,11 +1,15 @@
 const title = document.querySelector('#visual h1');
 const titleText = title.innerText;
-
 const section = document.querySelectorAll('section');
-const sectionOffset = [];
+let sectionOffset = [];
 const num = document.querySelectorAll('#intro span');
-
+const labtopLeft = document.querySelector('.floatLeftImg')
+const labtopRight = document.querySelector('.floatRightImg')
+const standard = document.querySelector('.standard');
+const react = document.querySelector('.react');
 const scrollBox = document.querySelector('.scroll dd');
+
+let enableScroll = true;
 
 // title 및 subtitle 애니메이션 
 let titleSplit = titleText.split('').join('</span><span>');
@@ -31,15 +35,14 @@ tl.from('#visual p', {
 section.forEach((el, idx)=>{
     sectionOffset.push(el.offsetTop);
 })
-console.log(sectionOffset[1]);
-
 
 //window.scroll 값 넣기
 window.addEventListener('scroll', e=>{
     const scrollValue = window.scrollY;
     scrollBox.innerHTML = scrollValue;
-    let numValue = (scrollValue - sectionOffset[1]) * 0.2;
     const base = -200;
+    let numValue = (scrollValue - sectionOffset[1]) * 0.2;
+    let LabtopVal = (scrollValue - (sectionOffset[2] - 500)) * 0.2;
 
     if(scrollValue >= sectionOffset[1]+base){
         const tl = gsap.timeline();
@@ -68,21 +71,81 @@ window.addEventListener('scroll', e=>{
             el.style.transform = `translateY(${numValue}px)`
         }
     }
-})
 
-const charts = document.querySelectorAll('.chart');
-charts.forEach((chart, idx)=>{
-    const dataNum = chart.querySelector('span');
-    let init = 0;
-    const dataNumVal = dataNum.getAttribute('data-num');
-    const time = 1000 / dataNumVal;
+    if(scrollValue >= sectionOffset[2] + base){
+        const tl = gsap.timeline();
+        tl.to('#work .tit h2', {
+            y: 0,
+            opacity: 1,
+            duration: 1
+        })
+        tl.to('#work .tit p', {
+            y: 0,
+            opacity: 1,
+            duration: 1
+        })
+    }
 
-    const numIncrease = setInterval(()=>{
-        ++init
-        dataNum.innerText = `${init}%`;
+    if(scrollValue >= sectionOffset[2] - 500){
+        labtopLeft.style.transform = `translateY(${-LabtopVal}px)`
 
-        if(init >= dataNumVal){
-            clearInterval(numIncrease);
+        labtopRight.style.transform = `translateY(${LabtopVal}px)`
+    }
+
+    if(scrollValue >= standard.offsetTop - 300){
+        gsap.to('#work .standard .pic', {
+            y: 0,
+            opacity: 1,
+            duration: 1
+        })
+        gsap.to('#work .standard .des', {
+            x: 0,
+            opacity: 1,
+            duration: 1
+        })
+    }
+
+    if(scrollValue >= react.offsetTop - 300){
+        gsap.to('#work .react .pic', {
+            y: 0,
+            opacity: 1,
+            duration: 1
+        })
+        gsap.to('#work .react .des', {
+            x: 0,
+            opacity: 1,
+            duration: 1
+        })
+    }
+
+
+    if(scrollValue >= sectionOffset[3]){
+        if(enableScroll === true){
+            const charts = document.querySelectorAll('.chart');
+            charts.forEach((chart)=>{
+                const dataNum = chart.querySelector('span');
+                const circle = chart.querySelector('circle');
+                let init = 0;
+                const dataNumVal = dataNum.getAttribute('data-num');
+                const time = 1000 / dataNumVal;
+    
+                const numIncrease = setInterval(()=>{
+                    ++init
+                    dataNum.innerText = `${init}%`;
+    
+                    if(init >= dataNumVal){
+                        clearInterval(numIncrease);
+                    }
+                },time)
+    
+                circle.style.strokeDashoffset = `${691 - (691 / 100 * dataNumVal )}px`
+            })
+
+            enableScroll = false;
         }
-    },time)
+    }
 })
+
+const skill = document.querySelector('#skill');
+console.log(skill.getBoundingClientRect());
+

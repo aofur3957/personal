@@ -133,6 +133,8 @@
             text-align: center;
             font: 160px/1 'Josefin Slab';
             color: #fff;
+            transform: translateY(150px);
+            opacity: 0;
 
             &::after {
                 content: '';
@@ -150,7 +152,9 @@
             margin: 140px auto 0;
             text-align: center;
             font: 28px/1.3 'S-CoreDream-3Light';
-            color: #fff; 
+            color: #fff;
+            transform: translateY(150px);
+            opacity: 0; 
         }
 
         .floatLeftImg {
@@ -187,6 +191,8 @@
 
             .pic {
                 width: 50%;
+                transform: translateY(-150px);
+                opacity: 0;
             }
             
             .des {
@@ -221,6 +227,19 @@
                 }
             }
 
+            &.standard {
+                .des {
+                    transform: translateX(200px);
+                    opacity: 0;
+                }
+            }
+
+            &.react {
+                .des {
+                    transform: translateX(-200px);
+                    opacity: 0;
+                }
+            }
         }
     }
 }
@@ -280,6 +299,16 @@
                         fill: #fff;
                         stroke-width: 20px;
                         stroke: #333;
+                        stroke-dasharray: 691px;
+                        stroke-dashoffset: 691px;
+                        transform: rotate(-90deg);
+                        transform-origin: center center;
+                        transition: all 1s;
+
+                        &.on {
+                            stroke-dashoffset: 0;
+                        }
+                        
                     }
                 }
             }
@@ -304,3 +333,4 @@
         }
     }
 }
+
