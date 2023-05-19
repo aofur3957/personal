@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <script defer src="js/main.js"></script>
 </head>
@@ -23,19 +24,39 @@
         </div>
     </section>
     <section id="intro">
-        <article class="des1">
-            <h2>Challenging</h2>
-            <span>01</span>
-            <p>항상 뭔가에 도전하는 것을 좋아합니다. 저는 이번에 퍼블리셔로서 새로운 도전을 시작하려 합니다. 웹은 끊임없이 변화하고 새로운 기술이 계속 쏟아져 나오는 만큼 변화의 흐름에 따라 끊임없이 도전하고 공부 해 나가겠습니다.</p>
-        </article>
-        <article class="des2">
-            <h2>Passionate</h2>
-            <span>02</span>
-            <p>항상 뭔가에 도전하는 것을 좋아합니다. 저는 이번에 퍼블리셔로서 새로운 도전을 시작하려 합니다. 웹은 끊임없이 변화하고 새로운 기술이 계속 쏟아져 나오는 만큼 변화의 흐름에 따라 끊임없이 도전하고 공부 해 나가겠습니다.</p>
-        </article>
-        <div class="pic"></div>
+        <div class="des">
+            <article class="des_area1">
+                <h2>Challenging</h2>
+                <span>01</span>
+                <p>항상 뭔가에 도전하는 것을 좋아합니다. 저는 이번에 퍼블리셔로서 새로운 도전을 시작하려 합니다. 웹은 끊임없이 변화하고 새로운 기술이 계속 쏟아져 나오는 만큼 변화의 흐름에 따라 끊임없이 도전하고 공부 해 나가겠습니다.</p>
+            </article>
+            <article class="des_area2">
+                <h2>Passionate</h2>
+                <span>02</span>
+                <p>항상 뭔가에 도전하는 것을 좋아합니다. 저는 이번에 퍼블리셔로서 새로운 도전을 시작하려 합니다. 웹은 끊임없이 변화하고 새로운 기술이 계속 쏟아져 나오는 만큼 변화의 흐름에 따라 끊임없이 도전하고 공부 해 나가겠습니다.</p>
+            </article>
+        </div>
+        <div class="pic">
+            <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" id="blobSvg">
+                <clipPath id="shape">
+                    <path fill="#fdcb63">
+                        <animate attributeName="d" dur="5s" repeatCount="indefinite" fill="freeze"
+                        values="M456,294Q433,338,405.5,374.5Q378,411,339.5,442Q301,473,250.5,470.5Q200,468,149,454.5Q98,441,70,395.5Q42,350,38,300Q34,250,44.5,203Q55,156,87,121Q119,86,159,57Q199,28,252,19Q305,10,340.5,51Q376,92,406.5,126Q437,160,458,205Q479,250,456,294Z;
+                        
+                        M466,304Q474,358,427.5,386Q381,414,340,438.5Q299,463,249.5,466Q200,469,157.5,444Q115,419,79,384.5Q43,350,22.5,300Q2,250,25.5,201.5Q49,153,84.5,120Q120,87,162,68.5Q204,50,251.5,42.5Q299,35,349.5,48.5Q400,62,416.5,112Q433,162,445.5,206Q458,250,466,304Z;
+                        
+                        M459,295Q436,340,410.5,379.5Q385,419,344,450.5Q303,482,251,478Q199,474,160.5,442.5Q122,411,87,378Q52,345,48,297.5Q44,250,41,199Q38,148,71,107Q104,66,154,57.5Q204,49,253,36.5Q302,24,349,46Q396,68,430,107.5Q464,147,473,198.5Q482,250,459,295Z;
+                        
+                        M460,298Q449,346,424,391Q399,436,348,445.5Q297,455,249.5,457.5Q202,460,149,451.5Q96,443,63.5,399.5Q31,356,17.5,303Q4,250,30,203.5Q56,157,86.5,120Q117,83,157.5,52.5Q198,22,251.5,16.5Q305,11,348.5,41.5Q392,72,416,115.5Q440,159,455.5,204.5Q471,250,460,298Z;
+                        
+                        M456,294Q433,338,405.5,374.5Q378,411,339.5,442Q301,473,250.5,470.5Q200,468,149,454.5Q98,441,70,395.5Q42,350,38,300Q34,250,44.5,203Q55,156,87,121Q119,86,159,57Q199,28,252,19Q305,10,340.5,51Q376,92,406.5,126Q437,160,458,205Q479,250,456,294Z"/>
+                    </path>
+                </clipPath>
+                <image x="0" y="0" width="100%" height="100%" clip-path="url(#shape)" href="img/me.jpg" preserveAspectRatio="xMidYMid slice"></image>
+            </svg>
+        </div>
     </section>
-    <section id="work">
+    <section id="work" class="ho">
         <div class="tit">
             <h2>WORK</h2>
             <p>모든 작업물은 웹표준 준수를 염두에 두고 작업하였으며, 미디어쿼리를 이용하여 반응형까지 적용하였습니다. 집에서 공부하는 틈틈이 스터디에 참여하여 부족한 부분을 보완하려 노력하였습니다.</p>
@@ -47,7 +68,7 @@
             </div>
         </div>
         <div class="project">
-            <article class="standard">
+            <article class="project1">
                 <div class="pic">
                     <img src="img/imac1.png">
                 </div>
@@ -59,7 +80,7 @@
                     <button>VIEW</button>
                 </div>
             </article>
-            <article class="react">
+            <article class="project2">
                 <div class="pic">
                     <img src="img/imac2.png">
                 </div>
@@ -67,6 +88,18 @@
                     <h3>SPASite</h3>
                     <p>
                         react를 사용하여 각 요소들을 컴포넌트화 하여 재사용성을 높였으며 페이지 요청 시 서버요청 없이 앱 내부에서 동적으로 페이지가 변경되므로 좀 더 스무스하고 자연스러운 페이지 이동을 경험할 수 있습니다.
+                    </p>
+                    <button>VIEW</button>
+                </div>
+            </article>
+            <article class="project3">
+                <div class="pic">
+                    <img src="img/imac3.png">
+                </div>
+                <div class="des">
+                    <h3>WebStandardSite</h3>
+                    <p>
+                        scss를 사용하여 코드 중복을 줄여 효율성을 높였으며 Flickr Api, Kakao Api등 각종 API로 데이터를 요청하여 랜더링 작업을 수행하였습니다. 
                     </p>
                     <button>VIEW</button>
                 </div>
@@ -79,8 +112,8 @@
             <article>
                 <div class="chart">
                     <span data-num="60">0%</span>
-                    <svg>
-                        <circle cx="120" cy="120" r="110"></circle>
+                    <svg viewBox="0 0 220 220">
+                        <circle cx="110" cy="110" r="100"></circle>
                     </svg>
                 </div>
                 <h3>PHOTOSHOP</h3>
@@ -92,8 +125,8 @@
             <article>
                 <div class="chart">
                     <span data-num="90">0%</span>
-                    <svg>
-                        <circle cx="120" cy="120" r="110"></circle>
+                    <svg viewBox="0 0 220 220">
+                        <circle cx="110" cy="110" r="100"></circle>
                     </svg>
                 </div>
                 <h3>HTML</h3>
@@ -104,8 +137,8 @@
             <article>
                 <div class="chart">
                     <span data-num="90">0%</span>
-                    <svg>
-                        <circle cx="120" cy="120" r="110"></circle>
+                    <svg viewBox="0 0 220 220">
+                        <circle cx="110" cy="110" r="100"></circle>
                     </svg>
                 </div>
                 <h3>CSS</h3>
@@ -116,8 +149,8 @@
             <article>
                 <div class="chart">
                     <span data-num="80">0%</span>
-                    <svg>
-                        <circle cx="120" cy="120" r="110"></circle>
+                    <svg viewBox="0 0 220 220">
+                        <circle cx="110" cy="110" r="100"></circle>
                     </svg>
                 </div>
                 <h3>JAVASCRIPT</h3>
@@ -133,8 +166,8 @@
             <article>
                 <div class="chart">
                     <span data-num="70">0%</span>
-                    <svg>
-                        <circle cx="120" cy="120" r="110"></circle>
+                    <svg viewBox="0 0 220 220">
+                        <circle cx="110" cy="110" r="100"></circle>
                     </svg>
                 </div>
                 <h3>REACT</h3>
@@ -145,7 +178,26 @@
         </div>
     </section>
     <section id="contact">
-
+        <h2>CONTACT</h2>
+        <div class="circle">
+            <p>
+                GET IN TOUCH GET IN TOUCH GET IN TOUCH GET IN TOUCH
+            </p>
+        </div>
+        <div class="msg">
+            <p>I'm ready to </p>
+            <p>begin</p>
+            <p>new journey</p>
+        </div>
+        <div class="info">
+            <h3>Contact <br> Info</h3>
+            <ul>
+                <li>TEL : 010 - 2678 - 3957</li>
+                <li>E-MAIL : aofur206@naver.com</li>
+            </ul>
+        </div>
     </section>
+    <section id="black"></section>
+    <section id="white"></section>
 </body>
 </html>

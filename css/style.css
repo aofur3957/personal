@@ -11,6 +11,10 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 ul li {
   list-style: none;
 }
@@ -48,91 +52,105 @@ img {
   align-items: center;
 }
 #visual div h1 {
-  margin-bottom: 50px;
+  margin-bottom: 5rem;
 }
 #visual div h1 span {
   display: inline-block;
-  font: 350px/1 "Josefin Slab";
+  font: 34rem/1 "Josefin Slab";
+  transform: translateY(50%);
+  opacity: 0;
 }
 #visual div p {
   text-align: center;
-  font: 300 30px/1 "Roboto";
+  font: 300 3rem/1 "Roboto";
+  transform: translateY(15rem);
+  opacity: 0;
 }
 
 #intro {
+  display: flex;
   position: relative;
-  padding: 150px 5vw;
+  padding: 10rem 0;
+  height: 110rem;
 }
-#intro article {
-  width: 55%;
-  margin-bottom: 90px;
+#intro .des {
+  flex: 1;
+  align-self: center;
+  margin-left: 5vw;
+  height: 80rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#intro .des article {
+  width: 75%;
+  height: 30rem;
+  margin-bottom: 5rem;
   position: relative;
-}
-#intro article h2 {
-  margin-bottom: 40px;
-  font: 100px/1 "Josefin Slab";
-  transform: translateY(150px);
   opacity: 0;
+  transform: translateY(10rem);
 }
-#intro article span {
+#intro .des article h2 {
+  margin-bottom: 4rem;
+  font: 9rem/1 "Josefin Slab";
+}
+#intro .des article span {
   position: absolute;
-  bottom: -100px;
+  bottom: -5rem;
   left: 0;
-  font: 200 150px/1 "Josefin Slab";
+  font: 200 15rem/1 "Josefin Slab";
   color: pink;
   z-index: -1;
 }
-#intro article p {
-  font: 28px/1.4 "S-CoreDream-3Light";
-  transform: translateY(150px);
-  opacity: 0;
+#intro .des article p {
+  font: 2.5rem/1.4 "S-CoreDream-3Light";
 }
-#intro article:last-of-type {
-  margin-left: 250px;
+#intro .des article:last-of-type {
+  margin-left: 15%;
+  margin-bottom: 0;
 }
-#intro article:last-of-type span {
+#intro .des article:last-of-type span {
   left: 20%;
 }
 #intro .pic {
-  position: absolute;
-  top: 100px;
-  right: 200px;
-  width: 400px;
-  height: 400px;
-  background: #000;
-  border-radius: 50%;
+  width: 50rem;
+  height: 50rem;
+  margin-right: 5vw;
+  position: relative;
 }
 #intro .pic::before {
   content: "";
   position: absolute;
-  top: calc(100% + 400px);
+  top: calc(90% + 40rem);
   left: 50%;
-  width: 26px;
-  height: 26px;
+  width: 2.6rem;
+  height: 2.6rem;
   background: #000;
-  margin-left: -13px;
+  margin-left: -1.3rem;
 }
 #intro .pic::after {
   content: "";
   position: absolute;
-  top: 100%;
+  top: 90%;
   left: 50%;
   width: 1px;
-  height: 400px;
+  height: 40rem;
   background: #000;
+  z-index: -1;
 }
 
 #work .tit {
   position: relative;
-  padding: 14vw 0;
+  padding: 25rem 0;
   background: #333;
+  z-index: 0;
 }
 #work .tit h2 {
   position: relative;
   text-align: center;
-  font: 160px/1 "Josefin Slab";
+  font: 16rem/1 "Josefin Slab";
   color: #fff;
-  transform: translateY(150px);
+  transform: translateY(15rem);
   opacity: 0;
 }
 #work .tit h2::after {
@@ -141,16 +159,16 @@ img {
   top: 100%;
   left: 50%;
   width: 1px;
-  height: 100px;
+  height: 10rem;
   background: #fff;
 }
 #work .tit p {
   width: 50%;
-  margin: 140px auto 0;
+  margin: 14rem auto 0;
   text-align: center;
-  font: 28px/1.3 "S-CoreDream-3Light";
+  font: 2.8rem/1.3 "S-CoreDream-3Light";
   color: #fff;
-  transform: translateY(150px);
+  transform: translateY(15rem);
   opacity: 0;
 }
 #work .tit .floatLeftImg {
@@ -158,31 +176,27 @@ img {
   bottom: 0;
   left: 0;
   width: 35%;
+  z-index: -100;
 }
 #work .tit .floatRightImg {
   position: absolute;
   top: 0;
   right: 0;
   width: 40%;
+  z-index: -100;
 }
 #work .project {
-  padding: 10vw 0;
+  padding: 22rem 0;
 }
 #work .project article {
   display: flex;
   justify-content: space-between;
   padding: 0 5vw;
-  margin-bottom: 10vw;
-}
-#work .project article:nth-of-type(2) {
-  flex-direction: row-reverse;
-}
-#work .project article:last-of-type {
-  margin-bottom: 0;
+  margin-bottom: 16rem;
 }
 #work .project article .pic {
-  width: 50%;
-  transform: translateY(-150px);
+  width: 55%;
+  transform: translateY(15rem);
   opacity: 0;
 }
 #work .project article .des {
@@ -190,19 +204,23 @@ img {
   width: 40%;
 }
 #work .project article .des h3 {
-  margin: 20px 0 50px;
-  font: 90px/1 "Josefin Slab";
+  margin: 2rem 0 5rem;
+  font-family: "Josefin Slab";
+  font-weight: 300;
+  font-size: calc(2.5rem + 2.5vw);
 }
 #work .project article .des p {
-  font: 20px/1.4 "S-CoreDream-3Light";
+  font-family: "S-CoreDream-3Light";
+  font-weight: 300;
+  font-size: calc(1rem + 0.5vw);
+  line-height: 1.4;
 }
 #work .project article .des button {
-  width: 100%;
   position: absolute;
-  bottom: 24%;
-  left: 0;
-  height: 40px;
-  font: 20px/40px "Josefin Slab";
+  top: 70%;
+  width: 100%;
+  height: 4rem;
+  font: 2rem/4rem "Josefin Slab";
   cursor: pointer;
   letter-spacing: 2px;
   background-color: #eee;
@@ -212,28 +230,37 @@ img {
 #work .project article .des button:hover {
   background-color: pink;
 }
-#work .project article.standard .des {
-  transform: translateX(200px);
+#work .project article.project1 .des {
+  transform: translateX(20rem);
   opacity: 0;
 }
-#work .project article.react .des {
-  transform: translateX(-200px);
+#work .project article.project2 {
+  flex-direction: row-reverse;
+}
+#work .project article.project2 .des {
+  transform: translateX(-20rem);
+  opacity: 0;
+}
+#work .project article.project3 {
+  margin-bottom: 0;
+}
+#work .project article.project3 .des {
+  transform: translateX(20rem);
   opacity: 0;
 }
 
 #skill {
-  padding: 200px 0;
+  padding: 20rem 0;
   background: #f9e1d5;
 }
 #skill h2 {
   text-align: center;
-  font: 160px/1 "Josefin Slab";
+  font: 16rem/1 "Josefin Slab";
 }
 #skill .charts {
   padding: 5vw;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
 }
 #skill .charts article {
   position: relative;
@@ -251,6 +278,9 @@ img {
   justify-content: center;
   align-items: center;
 }
+#skill .charts article:nth-of-type(3), #skill .charts article:nth-of-type(6) {
+  border-right: none;
+}
 #skill .charts article .chart {
   position: relative;
 }
@@ -259,40 +289,348 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font: 40px/1 "Roboto";
+  font: 4rem/1 "Roboto";
 }
 #skill .charts article .chart svg {
-  width: 240px;
-  height: 240px;
+  display: block;
+  margin: 0 auto;
+  width: 22rem;
+  height: 22rem;
 }
 #skill .charts article .chart svg circle {
-  margin: 0 auto;
   fill: #fff;
   stroke-width: 20px;
   stroke: #333;
-  stroke-dasharray: 691px;
-  stroke-dashoffset: 691px;
+  stroke-dasharray: 628px;
+  stroke-dashoffset: 628px;
+  stroke-linecap: round;
   transform: rotate(-90deg);
   transform-origin: center center;
   transition: all 1s;
 }
-#skill .charts article .chart svg circle.on {
-  stroke-dashoffset: 0;
-}
 #skill .charts article h3 {
-  margin-top: 40px;
-  font: 35px/1 "Roboto";
+  margin-top: 4rem;
+  font: 3.5rem/1 "Roboto";
 }
 #skill .charts article p {
   width: 50%;
-  margin: 30px auto 0;
-  font: 22px/1.4 "S-CoreDream-3Light";
+  margin: 3rem auto 0;
+  font: 2.2rem/1.4 "S-CoreDream-3Light";
 }
 #skill .charts article strong {
   display: block;
   padding: 4vw 3vw;
-  border: 20px solid #fff;
-  font: 500 40px/1.2 "Josefin Slab";
+  border: 2rem solid #fff;
+  font: 500 4rem/1.2 "Josefin Slab";
+}
+
+#contact {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #fff;
+}
+#contact h2 {
+  position: absolute;
+  top: 12rem;
+  left: 50%;
+  transform: translateX(-110%);
+  font: 10rem/1 "Josefin Slab";
+  color: #fff;
+  mix-blend-mode: difference;
+}
+#contact .circle {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  mix-blend-mode: difference;
+}
+#contact .circle p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20rem;
+  height: 20rem;
+}
+#contact .circle p span {
+  display: block;
+  font: 12rem/1 "roboto";
+  color: #fff;
+  position: absolute;
+}
+#contact .msg {
+  width: 80rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -50%);
+  mix-blend-mode: difference;
+}
+#contact .msg p {
+  display: block;
+  font-weight: 100;
+  line-height: 1.2;
+  font-family: "roboto";
+  font-size: min(7rem + 2vw, 110px);
+  text-transform: uppercase;
+  color: #fff;
+}
+#contact .msg p:nth-child(2) {
+  position: relative;
+}
+#contact .msg p:nth-child(2)::before {
+  content: "";
+  position: absolute;
+  top: -27%;
+  left: 0;
+  width: 18rem;
+  height: 18rem;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background: #fff;
+  mix-blend-mode: difference;
+}
+#contact .msg p:nth-child(2)::after {
+  display: block;
+  content: "";
+  position: absolute;
+  left: 35rem;
+  top: 50%;
+  width: 12rem;
+  height: 1rem;
+  background: #fff;
+}
+#contact .msg p:nth-child(3) {
+  margin-left: -6rem;
+}
+#contact .info {
+  display: flex;
+  position: absolute;
+  bottom: 10rem;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-left: 30rem;
+  mix-blend-mode: difference;
+}
+#contact .info h3 {
+  position: relative;
+  width: 12rem;
+  margin-right: 8rem;
+  font: 700 3rem/1 "roboto";
+  color: #fff;
+}
+#contact .info h3:before {
+  content: "?";
+  position: absolute;
+  top: -3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2.2rem;
+  height: 2.2rem;
+  background: #fff;
+  font: 700 2.2rem/1 "roboto";
+  text-align: center;
+  color: #333;
+  border-radius: 50%;
+}
+#contact .info h3:after {
+  position: absolute;
+  top: -2rem;
+  left: 15rem;
+  content: "";
+  width: 1px;
+  height: 10rem;
+  background: #fff;
+  transform: rotate(20deg);
+}
+#contact .info ul {
+  width: 30rem;
+}
+#contact .info ul li {
+  padding: 0.5rem;
+  color: #fff;
+  font: 300 2rem/1 "roboto";
+}
+
+@media screen and (max-width: 1200px) {
+  html {
+    font-size: 50%;
+  }
+  #visual div h1 span {
+    font-size: 27vw;
+  }
+  #visual div p {
+    font-size: 2.5vw;
+  }
+  #intro {
+    height: 120rem;
+  }
+  #intro .des {
+    margin-left: 2vw;
+  }
+  #intro .pic {
+    margin-right: 2vw;
+  }
+  #work .project article .des h3 {
+    font-size: 5.5rem;
+  }
+  #work .project article .des p {
+    font-size: 2rem;
+  }
+  #work .project article .des button {
+    position: absolute;
+    top: calc(100% - 4rem);
+  }
+  #work .project article.standard .des {
+    transform: translateX(20rem);
+    opacity: 0;
+  }
+  #work .project article.react .des {
+    transform: translateX(-20rem);
+    opacity: 0;
+  }
+  #skill .charts article p {
+    width: 80%;
+  }
+  #contact h2 {
+    top: 25rem;
+    transform: translateX(-90%);
+  }
+  #contact .info {
+    bottom: 25rem;
+    width: 45%;
+  }
+}
+@media screen and (max-width: 900px) {
+  html {
+    font-size: 43.75%;
+  }
+  #contact h2 {
+    top: 35rem;
+  }
+  #contact .info {
+    bottom: 35rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 37.5%;
+  }
+  #intro {
+    flex-direction: column-reverse;
+    padding: 10rem 0 20rem;
+    height: auto;
+  }
+  #intro .des {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-self: center;
+    margin: 0 5vw;
+  }
+  #intro .des article {
+    align-self: flex-start;
+  }
+  #intro .des article:last-of-type {
+    align-self: flex-end;
+    margin-left: 0;
+  }
+  #intro .pic {
+    margin-right: 0;
+    margin-bottom: 10rem;
+    align-self: center;
+  }
+  #intro .pic::before {
+    display: none;
+  }
+  #intro .pic::after {
+    display: none;
+  }
+  #work .project article {
+    flex-direction: column;
+  }
+  #work .project article .des {
+    width: 100%;
+  }
+  #work .project article .des button {
+    margin-top: 5rem;
+    position: static;
+  }
+  #work .project article .pic {
+    width: 100%;
+    margin-bottom: 8rem;
+  }
+  #work .project article:last-of-type {
+    flex-direction: column;
+  }
+  #skill .charts article {
+    width: 50%;
+  }
+  #skill .charts article:nth-of-type(3) {
+    border-top: 1px solid #fff;
+    border-right: 1px solid #fff;
+  }
+  #skill .charts article:nth-of-type(2), #skill .charts article:nth-of-type(4) {
+    border-right: none;
+  }
+  #contact h2 {
+    top: 50rem;
+  }
+  #contact .msg {
+    transform: translate(-35%, -50%);
+  }
+  #contact .info {
+    width: 55%;
+    margin-left: 20rem;
+    bottom: 50rem;
+  }
+}
+@media screen and (max-width: 539px) {
+  html {
+    font-size: 31.25%;
+  }
+  #intro .des article {
+    width: 100%;
+    align-self: center;
+  }
+  #intro .des article h2 {
+    font-size: 9rem;
+    text-align: center;
+  }
+  #intro .des article p {
+    text-align: center;
+  }
+  #intro .des article:last-of-type {
+    align-self: center;
+  }
+  #skill .charts article {
+    width: 100%;
+    border: none;
+  }
+  #skill .charts article:nth-of-type(5) {
+    order: 6;
+  }
+  #skill .charts article:nth-of-type(3) {
+    border: none;
+  }
+  #contact h2 {
+    top: 70rem;
+    transform: translateX(-50%);
+  }
+  #contact .msg {
+    width: 56rem;
+    transform: translate(-50%, -50%);
+  }
+  #contact .info {
+    justify-content: center;
+    width: 100%;
+    left: 0;
+    transform: translateX(0);
+    margin-left: 0;
+    bottom: 70rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

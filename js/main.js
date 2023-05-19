@@ -1,135 +1,177 @@
+gsap.registerPlugin(ScrollTrigger);
+
 window.addEventListener('load', e=>{
-    const title = document.querySelector('#visual h1');
-const titleText = title.innerText;
+const title = document.querySelector('#visual h1');
 const section = document.querySelectorAll('section');
 let sectionOffset = [];
-const num = document.querySelectorAll('#intro span');
-const labtopLeft = document.querySelector('.floatLeftImg')
-const labtopRight = document.querySelector('.floatRightImg')
-const standard = document.querySelector('.standard');
-const react = document.querySelector('.react');
+const project1 = document.querySelector('.project1');
+const project2 = document.querySelector('.project2');
+const project3 = document.querySelector('.project3');
+const circleText = document.querySelector('#contact .circle p');
 const scrollBox = document.querySelector('.scroll dd');
 
 let enableScroll = true;
+let enableScroll2 = true;
 
-// title 및 subtitle 애니메이션 
-let titleSplit = titleText.split('').join('</span><span>');
-titleSplit = `<span>${titleSplit}</span>`
-title.innerHTML = titleSplit;
+// text seperate 
+function TextSplit(element){
+    let text = element.innerText;
+    text = text.split('').join('</span><span>');
+    text = `<span>${text}</span>`;
+    element.innerHTML = text;
+}
 
-let tl = gsap.timeline();
-tl.from('#visual h1 span', {
-    opacity: 0,
-    y: 200,
-    duration: 1.2,
+TextSplit(title);
+TextSplit(circleText);
+
+const visualTl = gsap.timeline();
+visualTl.to('#visual h1 span', {
+    opacity: 1,
+    y: 0,
+    duration: 1.5,
     stagger: 0.2,
-    ease: "back.inOut(1.7)"
+    ease: "back.inOut(1.7)",
+})
+.to('#visual p', {
+    opacity: 1,
+    y: 0,
+    duration: 1.5
+}, '+=0.5');
+
+const introTl = gsap.timeline();
+introTl.to('.des_area1', {
+    opacity: 1,
+    y: -50,
+    scrollTrigger: {
+        trigger: '.des_area1',
+        start: 'top 90%',
+        end: 'center 40%',
+        scrub: '1',
+    } 
+})
+.to('.des_area2', {
+    opacity: 1,
+    y: -50,
+    scrollTrigger: {
+        trigger: '.des_area2',
+        start: 'top 75%',
+        end: 'center 40%',
+        scrub: '0.1'
+    } 
+})
+.to('.des_area1 span', {
+    y: 150,
+    scrollTrigger: {
+        trigger: '.des_area1',
+        start: 'top, center',
+        scrub: true
+    }
+})
+.to('.des_area2 span', {
+    y: 150,
+    scrollTrigger: {
+        trigger: '.des_area2',
+        start: 'top center',
+        scrub: true
+    }
 });
 
-tl.from('#visual p', {
-    opacity: 0,
-    y: 150,
-    duration: 1
-})
+const workParallax = gsap.timeline();
+        workParallax.to('.floatLeftImg', {
+            yPercent: -50,
+            scrollTrigger: {
+                trigger: '#work',
+                start: 'top 40%',
+                scrub: true
+            }
+        }).to('.floatRightImg', {
+            yPercent: 50,
+            scrollTrigger: {
+                trigger: '#work',
+                start: 'top 40%',
+                scrub: true
+            }
+        })
 
 //section offsetTop 배열 생성
 section.forEach((el, idx)=>{
     sectionOffset.push(el.offsetTop);
 })
-console.log(sectionOffset);
-
 //window.scroll 값 넣기
 window.addEventListener('scroll', e=>{
     const scrollValue = window.scrollY;
     scrollBox.innerHTML = scrollValue;
-    const base = -200;
-    let numValue = (scrollValue - sectionOffset[1]) * 0.2;
-    let LabtopVal = (scrollValue - (sectionOffset[2] - 500)) * 0.2;
 
-    if(scrollValue >= sectionOffset[1]+base){
-        const tl = gsap.timeline();
-        tl.to('.des1 h2', {
-            y: 0,
-            opacity: 1,
-            duration: 0.6
-        })
-        tl.to('.des1 p', {
-            y: 0,
-            opacity: 1,
-            duration: 0.6
-        })
-        tl.to('.des2 h2', {
-            y: 0,
-            opacity: 1,
-            duration: 0.6
-        })
-        tl.to('.des2 p', {
-            y: 0,
-            opacity: 1,
-            duration: 0.6
-        })
+    if(scrollValue >= sectionOffset[2] - 300){
+        if(enableScroll2){
+            const workTl = gsap.timeline();
+            const anim = workTl.to('#work .tit h2', {
+                y: 0,
+                opacity: 1,
+                duration: 1.2
+            })
+            .to('#work .tit p', {
+                y: 0,
+                opacity: 1,
+                duration: 1.2
+            }, '+=0.5');
 
-        for(let el of num){
-            el.style.transform = `translateY(${numValue}px)`
+            ScrollTrigger.create({
+                trigger: '#work',
+                animation: anim
+            })
+            enableScroll2 = false;
         }
     }
 
-    if(scrollValue >= sectionOffset[2] + base){
-        const tl = gsap.timeline();
-        tl.to('#work .tit h2', {
+    if(scrollValue >= project1.offsetTop - 300){
+        gsap.to('#work .project1 .pic', {
             y: 0,
             opacity: 1,
             duration: 1
         })
-        tl.to('#work .tit p', {
-            y: 0,
-            opacity: 1,
-            duration: 1
-        })
-    }
-
-    if(scrollValue >= sectionOffset[2] - 500){
-        labtopLeft.style.transform = `translateY(${-LabtopVal}px)`
-
-        labtopRight.style.transform = `translateY(${LabtopVal}px)`
-    }
-
-    if(scrollValue >= standard.offsetTop - 300){
-        gsap.to('#work .standard .pic', {
-            y: 0,
-            opacity: 1,
-            duration: 1
-        })
-        gsap.to('#work .standard .des', {
+        gsap.to('#work .project1 .des', {
             x: 0,
             opacity: 1,
             duration: 1
         })
     }
 
-    if(scrollValue >= react.offsetTop - 300){
-        gsap.to('#work .react .pic', {
+    if(scrollValue >= project2.offsetTop - 300){
+        gsap.to('#work .project2 .pic', {
             y: 0,
             opacity: 1,
             duration: 1
         })
-        gsap.to('#work .react .des', {
+        gsap.to('#work .project2 .des', {
             x: 0,
             opacity: 1,
             duration: 1
         })
     }
 
+    if(scrollValue >= project3.offsetTop - 300){
+        gsap.to('#work .project3 .pic', {
+            y: 0,
+            opacity: 1,
+            duration: 1
+        })
+        gsap.to('#work .project3 .des', {
+            x: 0,
+            opacity: 1,
+            duration: 1
+        })
+    }
 
     if(scrollValue >= sectionOffset[3]){
         if(enableScroll === true){
             const charts = document.querySelectorAll('.chart');
-            charts.forEach((chart)=>{
+            charts.forEach(chart=>{
                 const dataNum = chart.querySelector('span');
                 const circle = chart.querySelector('circle');
                 let init = 0;
                 const dataNumVal = dataNum.getAttribute('data-num');
-                const time = 1000 / dataNumVal;
+                const interval = 1000 / dataNumVal;
     
                 const numIncrease = setInterval(()=>{
                     ++init
@@ -138,18 +180,47 @@ window.addEventListener('scroll', e=>{
                     if(init >= dataNumVal){
                         clearInterval(numIncrease);
                     }
-                },time)
-    
-                circle.style.strokeDashoffset = `${691 - (691 / 100 * dataNumVal )}px`
+                }, interval)
+                
+                circle.style.strokeDashoffset = `${628 - (628 / 100 * dataNumVal )}px`
             })
-
             enableScroll = false;
         }
     }
 })
 
-const skill = document.querySelector('#skill');
-console.log(skill.getBoundingClientRect());
+function createCircle(){
+    const words = document.querySelectorAll('#contact span');
+    const length = words.length;
+    [...words].forEach((word, idx) => {
+        const deg = (360 / length) * idx;
+        if(window.matchMedia('(min-width: 1601px)').matches){
+            word.style.transform = `rotate(${deg}deg) translate(-50%, -800%)`;
+        }else if(window.matchMedia('(max-width: 1600px)').matches){
+            word.style.transform = `rotate(${deg}deg) translate(-50%, -650%)`;
+        }
+    })
+}
+createCircle();
+window.addEventListener('resize', createCircle);
+
+const circleParallax =  gsap.timeline({
+    scrollTrigger: {
+        trigger: '#contact',
+        scrub: true,
+        pin: true,
+        start: 'top top',
+        end: '+=100%',
+    }
+});
+
+circleParallax.to('#contact .circle p', {
+    rotation: 360,
+}).to('#contact', {
+    background: '#333'
+})
+
+
 })
 
 
