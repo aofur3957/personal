@@ -228,7 +228,7 @@ img {
   transition: all 0.7s;
 }
 #work .project article .des button:hover {
-  background-color: pink;
+  background-color: #f9e1d5;
 }
 #work .project article.project1 .des {
   transform: translateX(20rem);
@@ -317,11 +317,16 @@ img {
   margin: 3rem auto 0;
   font: 2.2rem/1.4 "S-CoreDream-3Light";
 }
-#skill .charts article strong {
-  display: block;
+#skill .charts article .note {
   padding: 4vw 3vw;
   border: 2rem solid #fff;
   font: 500 4rem/1.2 "Josefin Slab";
+}
+#skill .charts article .note strong {
+  display: inline-block;
+  margin-bottom: 2rem;
+  background-color: #333;
+  color: #fff;
 }
 
 #contact {
@@ -562,7 +567,7 @@ img {
     width: 100%;
     margin-bottom: 8rem;
   }
-  #work .project article:last-of-type {
+  #work .project article.project2 {
     flex-direction: column;
   }
   #skill .charts article {
