@@ -52,6 +52,7 @@ img {
   align-items: center;
 }
 #visual div h1 {
+  opacity: 0;
   margin-bottom: 5rem;
 }
 #visual div h1 span {
@@ -187,6 +188,7 @@ img {
 }
 #work .project {
   padding: 22rem 0;
+  overflow: hidden;
 }
 #work .project article {
   display: flex;
@@ -215,20 +217,30 @@ img {
   font-size: calc(1rem + 0.5vw);
   line-height: 1.4;
 }
-#work .project article .des button {
+#work .project article .des .btns {
   position: absolute;
   top: 70%;
+  display: flex;
   width: 100%;
+  gap: 1rem;
+}
+#work .project article .des .btns a {
+  width: 50%;
   height: 4rem;
   font: 2rem/4rem "Josefin Slab";
   cursor: pointer;
   letter-spacing: 2px;
   background-color: #eee;
   border: 1px solid #333;
+  text-align: center;
   transition: all 0.7s;
+  color: #333;
 }
-#work .project article .des button:hover {
+#work .project article .des .btns a:hover {
   background-color: #f9e1d5;
+}
+#work .project article .des .btns .btn_clone {
+  width: 100%;
 }
 #work .project article.project1 .des {
   transform: translateX(20rem);
@@ -334,6 +346,7 @@ img {
   height: 100vh;
   overflow: hidden;
   background: #fff;
+  opacity: 0;
 }
 #contact h2 {
   position: absolute;
@@ -360,7 +373,6 @@ img {
   height: 20rem;
 }
 #contact .circle p span {
-  display: block;
   font: 12rem/1 "roboto";
   color: #fff;
   position: absolute;
@@ -478,15 +490,20 @@ img {
   #intro .pic {
     margin-right: 2vw;
   }
+  #work .tit .floatLeftImg {
+    bottom: 50%;
+  }
+  #work .tit .floatRightImg {
+    top: 50%;
+  }
   #work .project article .des h3 {
-    font-size: 5.5rem;
+    font-size: 5rem;
   }
   #work .project article .des p {
     font-size: 2rem;
   }
-  #work .project article .des button {
-    position: absolute;
-    top: calc(100% - 4rem);
+  #work .project article .des .btns a {
+    font-size: 1.6rem;
   }
   #work .project article.standard .des {
     transform: translateX(20rem);
@@ -559,9 +576,9 @@ img {
   #work .project article .des {
     width: 100%;
   }
-  #work .project article .des button {
-    margin-top: 5rem;
+  #work .project article .des .btns {
     position: static;
+    margin-top: 3.3333rem;
   }
   #work .project article .pic {
     width: 100%;

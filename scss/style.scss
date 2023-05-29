@@ -33,9 +33,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
     div {
         h1 {
+            opacity: 0;
             margin-bottom: 5rem;
             span {
                 display: inline-block;
@@ -44,7 +44,6 @@
                 opacity: 0;
             }
         }
-
         p {
             text-align: center;
             font: 300 3rem/1 'Roboto';
@@ -185,6 +184,7 @@
 
     .project {
         padding: 22rem 0;
+        overflow: hidden;
 
         article {
             display: flex;
@@ -216,20 +216,32 @@
                     line-height: 1.4;
                 }
 
-                button {
+                .btns {
                     position: absolute;
                     top: 70%;
+                    display: flex;
                     width: 100%;
-                    height: 4rem;
-                    font: 2rem/4rem 'Josefin Slab';
-                    cursor: pointer;
-                    letter-spacing: 2px;
-                    background-color: #eee;
-                    border: 1px solid #333;
-                    transition: all 0.7s;
+                    gap: 1rem;
 
-                    &:hover {
+                    a {
+                        width: 50%;
+                        height: 4rem;
+                        font: 2rem/4rem 'Josefin Slab';
+                        cursor: pointer;
+                        letter-spacing: 2px;
+                        background-color: #eee;
+                        border: 1px solid #333;
+                        text-align: center;
+                        transition: all 0.7s;
+                        color: #333;
+
+                        &:hover {
                         background-color: #f9e1d5;
+                        }
+                    }
+
+                    .btn_clone {
+                        width: 100%;
                     }
                 }
             }
@@ -361,6 +373,7 @@
     height: 100vh;
     overflow: hidden;
     background: #fff;
+    opacity: 0;
     h2 {
         position: absolute;
         top: 12rem;
@@ -384,7 +397,6 @@
         width: 20rem;
         height: 20rem;
             span {
-                display: block;
                 font: 12rem/1 'roboto';
                 color: #fff;
                 position: absolute;
@@ -512,20 +524,30 @@
     }
 
     #work {
+        .tit {
+            .floatLeftImg {
+                bottom: 50%;
+            }
+
+            .floatRightImg {
+                top: 50%;
+            }
+        }
         .project {
             article {
                 .des {
                     h3 {
-                        font-size: 5.5rem;
+                        font-size: 5rem;
                     }
     
                     p {
                         font-size: 2rem;
                     }
-    
-                    button {
-                        position: absolute;
-                        top: calc(100% - 4rem);
+
+                    .btns {
+                        a {
+                            font-size: 1.6rem;
+                        }
                     }
                 }
     
@@ -576,6 +598,7 @@
         h2 {
             top: 35rem;
         }
+
         .info {
             bottom: 35rem;
         }
@@ -627,9 +650,9 @@
                 .des {
                     width: 100%;
 
-                    button {
-                        margin-top: 5rem;
+                    .btns {
                         position: static;
+                        margin-top: 3.3333rem;
                     }
                 }
 
